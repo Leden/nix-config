@@ -1,6 +1,10 @@
-{ lib, pkgs, config, inputs, ... }:
-
 {
+  lib,
+  pkgs,
+  config,
+  inputs,
+  ...
+}: {
   home.packages = with pkgs; [
     aider-chat.withPlaywright
   ];
@@ -17,7 +21,7 @@
       vim = true;
 
       # default mode (ask | code | help)
-      chat-mode="ask";
+      chat-mode = "ask";
 
       # git
       show-diffs = true;
