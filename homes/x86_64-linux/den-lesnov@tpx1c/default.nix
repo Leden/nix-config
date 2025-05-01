@@ -26,7 +26,8 @@
     glow
     yt-dlp
     ollama
-    python312
+    (python312.withPackages (ps: with ps; [wxpython]))
+    protontricks
   ];
 
   home.sessionVariables = {

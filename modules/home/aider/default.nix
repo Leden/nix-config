@@ -6,7 +6,7 @@
   ...
 }: {
   home.packages = with pkgs; [
-    aider-chat.withPlaywright
+    aider-chat-with-playwright
   ];
 
   home.file = {
