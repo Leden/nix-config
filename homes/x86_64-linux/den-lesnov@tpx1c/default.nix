@@ -28,6 +28,8 @@
     ollama
     (python312.withPackages (ps: with ps; [wxpython]))
     protontricks
+    btop
+    gfn-electron
   ];
 
   home.sessionVariables = {
