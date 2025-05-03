@@ -9,6 +9,6 @@
   ];
 
   home.sessionVariables = {
-    FLAKE = "${config.home.homeDirectory}/code/lesnov.me/nix-config"; # for nh
+    NH_FLAKE = "${config.home.homeDirectory}/code/lesnov.me/nix-config"; # for nh
   };
 }
