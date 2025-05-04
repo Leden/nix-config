@@ -11,29 +11,38 @@
   host,
   ...
 }: {
-  # This value determines the Home Manager release that your configuration is
-  # compatible with. This helps avoid breakage when a new Home Manager release
-  # introduces backwards incompatible changes.
-  #
-  # You should not change this value, even if you update Home Manager. If you do
-  # want to update the value, then make sure to first check the Home Manager
-  # release notes.
-  home.stateVersion = "24.05"; # Please read the comment before changing.
+  home = {
+    # This value determines the Home Manager release that your configuration is
+    # compatible with. This helps avoid breakage when a new Home Manager release
+    # introduces backwards incompatible changes.
+    #
+    # You should not change this value, even if you update Home Manager. If you do
+    # want to update the value, then make sure to first check the Home Manager
+    # release notes.
+    stateVersion = "24.05"; # Please read the comment before changing.
 
-  home.packages = with pkgs; [
-    ripgrep
-    zellij
-    glow
-    yt-dlp
-    ollama
-    (python312.withPackages (ps: with ps; [wxpython]))
-    protontricks
-    btop
-    gfn-electron
-  ];
+    packages = with pkgs; [
+      ripgrep
+      zellij
+      glow
+      yt-dlp
+      ollama
+      (python312.withPackages (ps: with ps; [wxpython]))
+      protontricks
+      btop
+      gfn-electron
+      bat
+      du-dust
+      speedtest-rs
+      xdotool
+      wasabiwallet
+      nix
+      git
+    ];
 
-  home.sessionVariables = {
-    EDITOR = "vim";
+    sessionVariables = {
+      EDITOR = "vim";
+    };
   };
 
   # Let Home Manager install and manage itself.
