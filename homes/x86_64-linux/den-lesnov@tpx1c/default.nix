@@ -38,6 +38,8 @@
       wasabiwallet
       nix
       git
+      zoxide
+      fzf
     ];
 
     sessionVariables = {
