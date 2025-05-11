@@ -2,13 +2,16 @@
   lib,
   pkgs,
   config,
+  namespace,
   ...
-}: {
+}: let
+  user = lib.${namespace}.users.den-lesnov;
+in {
   programs.git = {
     enable = true;
 
-    userName = "Denis Lesnov";
-    userEmail = "denis@lesnov.me";
+    userName = user.fullName;
+    userEmail = user.email;
 
     aliases = {
       br = "branch";

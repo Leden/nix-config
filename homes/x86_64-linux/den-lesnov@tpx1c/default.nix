@@ -22,24 +22,31 @@
     stateVersion = "24.05"; # Please read the comment before changing.
 
     packages = with pkgs; [
-      ripgrep
-      zellij
-      glow
-      yt-dlp
-      ollama
-      (python312.withPackages (ps: with ps; [wxpython]))
-      protontricks
-      btop
-      gfn-electron
+      # CLI
       bat
+      btop
       du-dust
+      fzf
+      git
+      glow
+      nix
+      ripgrep
       speedtest-rs
       xdotool
-      wasabiwallet
-      nix
-      git
+      yt-dlp
+      zellij
       zoxide
-      fzf
+
+      # AI
+      ollama
+
+      # Gaming
+      (python312.withPackages (ps: with ps; [wxpython]))
+      protontricks
+      gfn-electron
+
+      # Money
+      wasabiwallet
     ];
 
     sessionVariables = {
