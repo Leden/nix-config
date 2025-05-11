@@ -4,12 +4,11 @@
   pkgs,
   mkShell,
   ...
-}:
-mkShell {
-  packages = with pkgs; [
-    nil # Nix LSP
-    alejandra # Nix formatter
-    statix # Nix linter
-    pre-commit
-  ];
-}
+}: let
+  system = "x86_64-linux";
+  inherit (inputs.self.checks.${system}) pre-commit;
+in
+  mkShell {
+    inherit (pre-commit) shellHook;
+    buildInputs = pre-commit.enabledPackages;
+  }
