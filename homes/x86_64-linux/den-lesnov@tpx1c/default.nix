@@ -32,10 +32,13 @@
       nix
       ripgrep
       speedtest-rs
-      xdotool
       yt-dlp
       zellij
       zoxide
+
+      # Desktop
+      firefox
+      xdotool
 
       # AI
       ollama
