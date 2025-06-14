@@ -27,7 +27,6 @@
       btop
       du-dust
       fzf
-      git
       glow
       nix
       ripgrep
@@ -62,5 +61,10 @@
 
   services.syncthing.enable = true;
 
-  ${namespace}.programs.aider.enable = true;
+  ${namespace} = {
+    programs = {
+      aider.enable = true;
+      git.enable = true;
+    };
+  };
 }
