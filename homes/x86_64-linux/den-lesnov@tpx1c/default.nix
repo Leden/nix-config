@@ -65,6 +65,7 @@
     programs = {
       aider.enable = true;
       git.enable = true;
+      nh.enable = true;
     };
   };
 }
