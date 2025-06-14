@@ -61,4 +61,6 @@
   programs.home-manager.enable = true;
 
   services.syncthing.enable = true;
+
+  ${namespace}.programs.aider.enable = true;
 }
