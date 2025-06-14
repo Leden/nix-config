@@ -66,6 +66,7 @@
       aider.enable = true;
       git.enable = true;
       nh.enable = true;
+      nix-index.enable = true;
     };
   };
 }
