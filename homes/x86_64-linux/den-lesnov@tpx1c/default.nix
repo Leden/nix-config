@@ -22,11 +22,6 @@
     stateVersion = "24.05"; # Please read the comment before changing.
 
     packages = with pkgs; [
-      # Core
-      # git
-      # nix
-      # speedtest-rs
-
       # CLI
       bat
       btop
@@ -66,12 +61,11 @@
   services.syncthing.enable = true;
 
   ${namespace} = {
-    programs = {
-      # Core
-      git.enable = true;
-      nix.enable = true;
-      speedtest-rs.enable = true;
+    roles = {
+      core.enable = true;
+    };
 
+    programs = {
       # Development
       aider.enable = true;
       nix-index.enable = true;
