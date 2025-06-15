@@ -16,6 +16,7 @@ in {
         nix-index.enable = true;
         nh.enable = true;
         glow.enable = true;
+        zoxide.enable = true;
       };
     };
 
@@ -26,7 +27,6 @@ in {
       fzf.enable = true;
       ripgrep.enable = true;
       zellij.enable = true;
-      zoxide.enable = true; # TODO: extract module & config
     };
 
     home.packages = with pkgs; [
