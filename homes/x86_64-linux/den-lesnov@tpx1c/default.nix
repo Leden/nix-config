@@ -22,15 +22,19 @@
     stateVersion = "24.05"; # Please read the comment before changing.
 
     packages = with pkgs; [
+      # Core
+      # git
+      # nix
+      speedtest-rs
+
       # CLI
       bat
       btop
       du-dust
+      fd
       fzf
       glow
-      nix
       ripgrep
-      speedtest-rs
       yt-dlp
       zellij
       zoxide
@@ -63,10 +67,14 @@
 
   ${namespace} = {
     programs = {
-      aider.enable = true;
+      # Core
       git.enable = true;
-      nh.enable = true;
+      nix.enable = true;
+
+      # Development
+      aider.enable = true;
       nix-index.enable = true;
+      nh.enable = true;
     };
   };
 }
