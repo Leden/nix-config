@@ -43,14 +43,11 @@
     };
   };
 
-  # Media
-  programs.yt-dlp.enable = true;
-  services.syncthing.enable = true;
-
   ${namespace} = {
     roles = {
       core.enable = true;
       development.enable = true;
+      media.enable = true;
     };
   };
 }
