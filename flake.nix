@@ -27,7 +27,7 @@
     inputs.snowfall-lib.mkFlake {
       inherit inputs;
       src = ./.;
-      snowfall.namespace = "onix";
+      snowfall.namespace = "deadlight";
 
       alias = {
         shells.default = "nix-config";
