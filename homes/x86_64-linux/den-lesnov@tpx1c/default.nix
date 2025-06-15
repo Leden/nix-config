@@ -22,18 +22,6 @@
     stateVersion = "24.05"; # Please read the comment before changing.
 
     packages = with pkgs; [
-      # CLI
-      bat
-      btop
-      du-dust
-      fd
-      fzf
-      glow
-      ripgrep
-      yt-dlp
-      zellij
-      zoxide
-
       # Desktop
       firefox
       xdotool
@@ -63,13 +51,7 @@
   ${namespace} = {
     roles = {
       core.enable = true;
-    };
-
-    programs = {
-      # Development
-      aider.enable = true;
-      nix-index.enable = true;
-      nh.enable = true;
+      development.enable = true;
     };
   };
 }
