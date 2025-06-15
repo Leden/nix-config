@@ -25,7 +25,7 @@
       # Core
       # git
       # nix
-      speedtest-rs
+      # speedtest-rs
 
       # CLI
       bat
@@ -70,6 +70,7 @@
       # Core
       git.enable = true;
       nix.enable = true;
+      speedtest-rs.enable = true;
 
       # Development
       aider.enable = true;
