@@ -46,6 +46,9 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
+  # Media
+  programs.yt-dlp.enable = true;
+
   services.syncthing.enable = true;
 
   ${namespace} = {

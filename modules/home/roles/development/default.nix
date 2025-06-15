@@ -18,17 +18,19 @@ in {
       };
     };
 
-    packages = with pkgs; [
-      bat
-      btop
+    programs = {
+      bat.enable = true;
+      btop.enable = true;
+      fd.enable = true;
+      fzf.enable = true;
+      ripgrep.enable = true;
+      zellij.enable = true;
+      zoxide.enable = true; # TODO: extract module & config
+    };
+
+    home.packages = with pkgs; [
       du-dust
-      fd
-      fzf
       glow # TODO: alias -p
-      ripgrep
-      yt-dlp
-      zellij
-      zoxide # TODO: extract module & config
     ];
   };
 }
