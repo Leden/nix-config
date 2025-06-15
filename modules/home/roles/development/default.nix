@@ -15,6 +15,7 @@ in {
         aider.enable = true;
         nix-index.enable = true;
         nh.enable = true;
+        glow.enable = true;
       };
     };
 
@@ -30,7 +31,6 @@ in {
 
     home.packages = with pkgs; [
       du-dust
-      glow # TODO: alias -p
     ];
   };
 }
