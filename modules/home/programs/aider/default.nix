@@ -6,13 +6,21 @@
   namespace,
   ...
 }: let
+  inherit (lib) mkEnableOption mkOption mkIf types;
   cfg = config.${namespace}.programs.aider;
 in {
-  options.${namespace}.programs.aider.enable = lib.mkEnableOption "Enable aider";
+  options.${namespace}.programs.aider = {
+    enable = mkEnableOption "Enable aider";
 
-  config = lib.mkIf cfg.enable {
+    package = mkOption {
+      type = types.package;
+      default = pkgs.aider-chat;
+    };
+  };
+
+  config = mkIf cfg.enable {
     home.packages = with pkgs; [
-      aider-chat-with-playwright
+      cfg.package
     ];
 
     home.file = {
@@ -27,7 +35,7 @@ in {
         # vim-mode input
         vim = true;
 
-        # default mode (ask | code | help)
+        # default mode (ask | architect | code | help)
         chat-mode = "ask";
 
         # git
