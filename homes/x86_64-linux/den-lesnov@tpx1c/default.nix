@@ -49,5 +49,7 @@
       development.enable = true;
       media.enable = true;
     };
+
+    programs.git.user = lib.${namespace}.users.den-lesnov;
   };
 }
