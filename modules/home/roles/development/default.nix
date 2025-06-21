@@ -17,6 +17,7 @@ in {
         nh.enable = true;
         glow.enable = true;
         zoxide.enable = true;
+        direnv.enable = true;
       };
     };
 
