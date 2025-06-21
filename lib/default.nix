@@ -1,8 +1,8 @@
 _: {
   users = {
     den-lesnov = {
-      fullName = "Denis Lesnov";
-      email = "denis@lesnov.me";
+      full-name = "Denis Lesnov";
+      email = "191432+Leden@users.noreply.github.com";
     };
   };
 }

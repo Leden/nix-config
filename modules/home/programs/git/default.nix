@@ -5,16 +5,28 @@
   namespace,
   ...
 }: let
+  inherit (lib) mkEnableOption mkOption mkIf types;
+
   cfg = config.${namespace}.programs.git;
-  user = lib.${namespace}.users.den-lesnov;
 in {
-  options.${namespace}.programs.git.enable = lib.mkEnableOption "Enable git";
-  config = lib.mkIf cfg.enable {
+  options.${namespace}.programs.git = {
+    enable = mkEnableOption "Enable git";
+
+    user.full-name = mkOption {
+      type = types.str;
+    };
+
+    user.email = mkOption {
+      type = types.str;
+    };
+  };
+
+  config = mkIf cfg.enable {
     programs.git = {
       enable = true;
 
-      userName = user.fullName;
-      userEmail = user.email;
+      userName = cfg.user.full-name;
+      userEmail = cfg.user.email;
 
       aliases = {
         br = "branch";
