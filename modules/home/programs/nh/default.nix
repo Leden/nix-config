@@ -5,17 +5,28 @@
   namespace,
   ...
 }: let
+  inherit (lib) mkEnableOption mkOption mkIf types;
+
   cfg = config.${namespace}.programs.nh;
 in {
-  options.${namespace}.programs.nh.enable = lib.mkEnableOption "Enable nh";
-  config = lib.mkIf cfg.enable {
-    home.packages = with pkgs; [
-      nh
-    ];
+  options.${namespace}.programs.nh = {
+    enable = mkEnableOption "Enable nh";
+
+    package = mkOption {
+      type = types.package;
+      default = pkgs.nh;
+    };
+
+    flake-path = mkOption {
+      type = types.string;
+      default = "${config.home.homeDirectory}/.nix-config";
+    };
+  };
+  config = mkIf cfg.enable {
+    home.packages = [cfg.package];
 
     home.sessionVariables = {
-      # TODO: move the repo to simply ~/.nix-config, for all systems?
-      NH_FLAKE = "${config.home.homeDirectory}/code/lesnov.me/nix-config"; # for nh
+      NH_FLAKE = cfg.flake-path;
     };
   };
 }
