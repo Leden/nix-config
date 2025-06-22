@@ -21,6 +21,11 @@
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs:
@@ -35,6 +40,7 @@
 
       homes.modules = with inputs; [
         nix-index-database.hmModules.nix-index
+        nixvim.homeModules.nixvim
       ];
     };
 }

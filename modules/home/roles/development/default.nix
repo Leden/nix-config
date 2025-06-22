@@ -18,6 +18,7 @@ in {
         glow.enable = true;
         zoxide.enable = true;
         direnv.enable = true;
+        nixvim.enable = true;
       };
     };
 

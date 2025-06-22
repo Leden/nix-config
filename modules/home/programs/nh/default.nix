@@ -18,7 +18,7 @@ in {
     };
 
     flake-path = mkOption {
-      type = types.string;
+      type = types.str;
       default = "${config.home.homeDirectory}/.nix-config";
     };
   };
