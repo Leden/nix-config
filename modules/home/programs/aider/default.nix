@@ -46,14 +46,14 @@ in {
         check-update = false;
 
         # default model
-        model = "local";
+        model = "r1";
 
         # model aliases
         alias = [
-          "local:ollama_chat/qwen2.5-coder:1.5b"
-          "smart:openrouter/deepseek/deepseek-r1"
-          "fast:openrouter/anthropic/claude-3-5-haiku"
-          "hacker:openrouter/anthropic/claude-3.7-sonnet"
+          "sonnet:openrouter/anthropic/claude-sonnet-4"
+          "haiku:openrouter/anthropic/claude-3.5-haiku"
+          "r1:openrouter/deepseek/deepseek-r1-0528"
+          "o4:openrouter/openai/o4-mini-high"
         ];
       };
     };
