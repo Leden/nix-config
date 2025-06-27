@@ -50,6 +50,6 @@
       media.enable = true;
     };
 
-    programs.git.user = lib.${namespace}.users.den-lesnov;
+    programs.git.user = config.${namespace}.users.den-lesnov;
   };
 }

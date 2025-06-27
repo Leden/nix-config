@@ -12,7 +12,7 @@ in {
   options.${namespace}.programs.git = {
     enable = mkEnableOption "Enable git";
 
-    user.full-name = mkOption {
+    user.fullName = mkOption {
       type = types.str;
     };
 
@@ -25,7 +25,7 @@ in {
     programs.git = {
       enable = true;
 
-      userName = cfg.user.full-name;
+      userName = cfg.user.fullName;
       userEmail = cfg.user.email;
 
       aliases = {
