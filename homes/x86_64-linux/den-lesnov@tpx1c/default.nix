@@ -26,9 +26,6 @@
       firefox
       xdotool
 
-      # AI
-      ollama
-
       # Gaming
       (python312.withPackages (ps: with ps; [wxpython]))
       protontricks
