@@ -5,7 +5,7 @@
   namespace,
   ...
 }: let
-  inherit (lib) mkEnableOption mkOption mkIf types;
+  inherit (lib) mkEnableOption mkIf;
 
   cfg = config.${namespace}.programs.nixvim;
 in {
@@ -30,9 +30,25 @@ in {
 
       lsp = {
         servers = {
+          cssls.enable = true;
           docker_compose_language_service.enable = true;
           dockerls.enable = true;
+          dotls.enable = true;
+          eslint.enable = true;
+          helmls.enable = true;
           html.enable = true;
+          nginx_language_server.enable = true;
+          nil_ls.enable = true;
+          nixd.enable = true;
+          pylsp.enable = true;
+          ruff.enable = true;
+          rust_analyzer.enable = true;
+          sqls.enable = true;
+          statix.enable = true;
+          ts_ls.enable = true;
+          ttags.enable = true;
+          typos_lsp.enable = true;
+          yamlls.enable = true;
         };
       };
 
@@ -51,6 +67,61 @@ in {
           settings = {
             highlight.enable = true;
           };
+
+          grammarPackages = with pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
+            awk
+            bash
+            css
+            csv
+            desktop
+            diff
+            dockerfile
+            dot
+            dtd
+            editorconfig
+            git_config
+            git_rebase
+            gitattributes
+            gitcommit
+            gitignore
+            gpg
+            graphql
+            hcl
+            helm
+            html
+            htmldjango
+            http
+            ini
+            javascript
+            jinja
+            jq
+            json
+            lua
+            make
+            markdown
+            markdown_inline
+            mermaid
+            nginx
+            nix
+            passwd
+            printf
+            python
+            regex
+            requirements
+            rust
+            scss
+            sql
+            ssh_config
+            terraform
+            toml
+            tsv
+            tsx
+            typescript
+            vim
+            vimdoc
+            xml
+            yaml
+          ];
         };
 
         telescope = {
