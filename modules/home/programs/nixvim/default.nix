@@ -22,6 +22,10 @@ in {
         relativenumber = true; # Show relative line numbers
 
         shiftwidth = 2; # Tab width should be 2
+
+        # Highlight cursor row & column
+        cursorline = true;
+        cursorcolumn = true;
       };
 
       #vimAlias = true;
