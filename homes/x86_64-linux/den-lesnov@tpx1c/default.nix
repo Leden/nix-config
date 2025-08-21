@@ -33,6 +33,7 @@
 
       # Money
       wasabiwallet
+      gnucash
     ];
 
     sessionVariables = {
