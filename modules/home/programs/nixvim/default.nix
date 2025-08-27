@@ -15,7 +15,9 @@ in {
 
   config = mkIf cfg.enable {
     home.packages = with pkgs; [
-      typescript-language-server # for ts_ls
+      # for ts_ls
+      typescript
+      typescript-language-server
     ];
 
     programs.nixvim = {
