@@ -47,7 +47,7 @@ in {
           eslint.enable = true;
           helmls.enable = true;
           html.enable = true;
-          nginx_language_server.enable = true;
+          #nginx_language_server.enable = true;
           nil_ls.enable = true;
           nixd.enable = true;
           pylsp.enable = true;

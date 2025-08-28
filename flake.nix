@@ -39,7 +39,7 @@
       };
 
       homes.modules = with inputs; [
-        nix-index-database.hmModules.nix-index
+        nix-index-database.homeModules.nix-index
         nixvim.homeModules.nixvim
       ];
     };
