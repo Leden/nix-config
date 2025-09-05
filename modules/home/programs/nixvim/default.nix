@@ -38,6 +38,14 @@ in {
       enableMan = true;
       globals.mapleader = " ";
 
+      keymaps = [
+        {
+          key = "<leader>rr";
+          action = "<cmd>Rest run<CR>";
+          mode = ["n" "v"];
+        }
+      ];
+
       lsp = {
         servers = {
           cssls.enable = true;
@@ -164,6 +172,11 @@ in {
             {name = "path";}
             {name = "buffer";}
           ];
+        };
+
+        rest = {
+          enable = true;
+          enableTelescope = true;
         };
       };
     };
