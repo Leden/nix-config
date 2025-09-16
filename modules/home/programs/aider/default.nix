@@ -38,6 +38,9 @@ in {
         # default mode (ask | architect | code | help)
         chat-mode = "ask";
 
+        # disable automatic linting
+        auto-lint = false;
+
         # git
         show-diffs = true;
         auto-commits = false;
