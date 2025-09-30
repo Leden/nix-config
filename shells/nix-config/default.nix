@@ -9,6 +9,28 @@
 
   inherit (inputs.self.checks.${system}) pre-commit;
 
+  cmd-system-upgrade = pkgs.writeShellScriptBin ".system-upgrade" ''
+    set -euo pipefail
+
+    command -v apt && {
+      sudo apt update
+      sudo apt upgrade -y
+      sudo apt autoremove -y
+    }
+
+    command -v snap && {
+      sudo snap refresh
+    }
+
+    command -v flatpak && {
+      flatpak update -y
+    }
+
+    command -v .update-switch && {
+      .update-switch
+    }
+  '';
+
   cmd-update-switch = pkgs.writeShellScriptBin ".update-switch" ''
     set -euo pipefail
 
@@ -40,6 +62,7 @@ in
       ++ (
         with pkgs; [
           cmd-update-switch
+          cmd-system-upgrade
         ]
       );
   }
