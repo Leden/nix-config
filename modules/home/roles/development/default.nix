@@ -27,6 +27,7 @@ in {
       btop.enable = true;
       fd.enable = true;
       fzf.enable = true;
+      gh.enable = true;
       ripgrep.enable = true;
       zellij.enable = true;
     };
