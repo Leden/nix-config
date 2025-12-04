@@ -17,6 +17,7 @@ in {
       enable = true;
       nix-direnv.enable = true;
       silent = true;
+      config.global.load_dotenv = true;
     };
   };
 }
