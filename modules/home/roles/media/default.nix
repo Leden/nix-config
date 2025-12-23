@@ -1,6 +1,5 @@
 {
   lib,
-  pkgs,
   config,
   namespace,
   ...
@@ -12,5 +11,6 @@ in {
   config = lib.mkIf cfg.enable {
     programs.yt-dlp.enable = true;
     services.syncthing.enable = true;
+    programs.rtorrent.enable = true;
   };
 }
