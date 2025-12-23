@@ -34,7 +34,7 @@ in {
         cursorcolumn = true;
       };
 
-      #vimAlias = true;
+      vimAlias = true;
       enableMan = true;
       globals.mapleader = " ";
 
