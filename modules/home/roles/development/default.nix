@@ -12,7 +12,6 @@ in {
   config = lib.mkIf cfg.enable {
     ${namespace} = {
       programs = {
-        aider.enable = true;
         nix-index.enable = true;
         nh.enable = true;
         glow.enable = true;
